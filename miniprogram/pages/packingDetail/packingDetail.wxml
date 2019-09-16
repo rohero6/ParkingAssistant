@@ -1,0 +1,20 @@
+<view class="packingDetail" wx:for="{{detail}}" wx:key="{{index}}">
+<van-panel  desc="" status="{{item.endTime?'已完成':'进行中'}}" use-footer-slot>
+  <view class="panel-content">
+  <view>车位:{{item.berthNumber}}</view>
+  <view wx:if="{{item.usedTime}}">大约用时:{{item.usedTime}}h</view>
+  <view><image class='timeioc' src='../../images/time.png'></image>
+  <text class='startTime'>{{item.startTime}}</text>
+  </view>
+  </view>
+  <view slot="footer">
+    <van-button wx:if="{{!item.endTime}}" class="button-detail" size="small">查看详情</van-button>
+    <van-button wx:else class="button-detail1" size="small">查看详情</van-button>
+    <van-button wx:if="{{!item.endTime}}" class="button-end" size="small" type="danger" bindtap='packingend' data-berth="{{item.berthNumber}}">结束停车</van-button>
+  </view>
+</van-panel>
+
+</view>
+
+
+

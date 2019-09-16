@@ -1,0 +1,34 @@
+.packingDetail{
+  border: 1px solid #ccc;
+}
+.panel-content{
+  height: 200rpx;
+  width: 100%;
+  position:relative;
+}
+
+.timeioc{
+  position: absolute;
+  float: left;
+  width: 80rpx;
+  height: 80rpx;
+  bottom: 0; 
+}
+.startTime{
+  position: absolute;
+  left: 80rpx;
+  font-size: 30rpx;
+  bottom: 20rpx;
+}
+.button-end{
+  float:right;
+}
+
+.button-detail{
+  position:relative;
+  left:50%;
+}
+.button-detail1{
+  position:relative;
+  left:78%;
+}

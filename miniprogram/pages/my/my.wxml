@@ -1,0 +1,26 @@
+<view class='userinfo'>
+<view wx:if="{{!canIUse}}">
+    <view><image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image></view>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+<button class='userinfo-btn' wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信登录</button>
+</view>
+
+<view class="person-list">
+ 
+  <view class="list-item">
+    <image class="item-image" src="../../images/car.png"></image>
+    <text bindtap='carnumber' class="item-text">我的车牌　　　　　　　　</text>
+    <text wx:if="{{personCarnum&&!canIUse}}" class="carNumber">{{personCarnum}}</text>
+  </view>
+  <view class="person-line"></view>
+  <view class="list-item">
+    <image class="item-image" src="../../images/order.png"></image>
+    <text bindtap="myorder" class="item-text">我的订单</text>
+  </view>
+  <view class="person-line"></view>
+  <view class="list-item">
+    <image class="item-image" src="../../images/customer.png"></image>
+    <text class="item-text">联系客服</text>
+  </view>
+  </view>

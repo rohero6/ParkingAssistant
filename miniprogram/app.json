@@ -1,20 +1,45 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi"
+    "pages/my/my",
+    "pages/packing/packing",
+    "pages/movie/movie",
+    "pages/comment/comment",
+    "pages/packingDetail/packingDetail",
+    "pages/carnumber/carnumber"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarBackgroundColor": "#0099ff",
+    "navigationBarTitleText": "智慧停车",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#CCCCCC",
+    "selectedColor": "#FF1493",
+    "list": [{
+      "pagePath": "pages/packing/packing",
+      "text": "停车",
+      "iconPath": "images/packing.png",
+      "selectedIconPath": "images/packing-actived.png"
+    },{
+      "pagePath": "pages/packingDetail/packingDetail",
+      "text": "我的停车",
+      "iconPath": "images/order.png",
+      "selectedIconPath": "images/order-actived.png"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "个人中心",
+      "iconPath": "images/my.png",
+      "selectedIconPath": "images/my-actived.png"
+    }]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+  
 }

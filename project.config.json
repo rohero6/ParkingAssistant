@@ -2,15 +2,18 @@
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"appid": "wx48c3861b791c310f",
 	"projectname": "ParkingAssistant",
-	"libVersion": "2.2.5",
+	"libVersion": "2.7.4",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -30,12 +33,54 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
 					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide"
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "packing",
+					"pathName": "pages/packing/packing",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "movie",
+					"pathName": "pages/movie/movie",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "movieid : \"30171425\"",
+					"pathName": "pages/comment/comment",
+					"query": "movieid=30171425",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packingDetail",
+					"pathName": "pages/packingDetail/packingDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packingnumber",
+					"pathName": "pages/packing/packing",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/my/my",
+					"scene": null
 				}
 			]
 		}

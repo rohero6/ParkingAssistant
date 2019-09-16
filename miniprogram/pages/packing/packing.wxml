@@ -1,0 +1,60 @@
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="泊位号停车">
+  <view class='statement'> 
+  <van-button size='mini' type="warning">已使用</van-button>
+  <van-button size='mini' type="primary">未使用</van-button>
+  </view >
+  <view class='packing-space-left' >
+   <van-button type="{{item.state==0?'primary':'warning'}}" wx:for="{{packingState}}" wx:if="{{index<10}}" bindtap="bottonTap" data-berth="{{item.berthNumber}}">{{item.berthNumber}}</van-button>
+  </view>
+   <view class='packing-space-right'>
+      <van-button type="{{item.state==0?'primary':'warning'}}" wx:for="{{packingState}}" wx:if="{{index>=10}}" bindtap="bottonTap" data-berth="{{item.berthNumber}}">{{item.berthNumber}}</van-button>
+  </view>
+  
+
+  <view class='packing-input'>
+  <form class="form-packing" >
+    <view class='ipt_box'>
+    <text class="packing-number">泊位号</text>
+      <input 
+      type='number' wx:for="{{inputLen}}" wx:key="{{index}}" 
+      disabled bindtap='onFocus'
+      value="{{iptValue.length>=index+1?iptValue[index]:''}}"
+      />
+    </view>
+  <input 
+  name="password" password="{{true}}" 
+  class='hidden_ipt' maxlength="{{inputLen}}" 
+  focus="{{isFocus}}" bindinput="setValue"
+  ></input>
+</form>
+<van-button class="packing-start" round size='large' type="primary" bindtap='packingNumber'>开始停车</van-button>
+  </view>
+  </van-tab>
+
+
+  <van-tab title="地图停车">
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location class="map"></map>
+<scroll-view scroll-y style="height: 400px;"   scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<view class="parking-list-container" wx:for="{{markers}}" wx:key="{{index}}">
+  <view class="parking-list-section" bindtap="bindParkingListItemTap">
+    <view class="content">
+      <view class="parking-list-item">
+        <view class="parking-name">{{item.title}}</view>
+      </view>
+      <view class="parking-list-item">
+        <view class="u-1of2 plain-text">距您:
+          <view class="parking-distance">{{item._distance}}m</view>
+          <image class="arrow-right" bindtap="mapto" data-mapdel="{{item}}" src="/images/arrowright.png"></image>
+        </view>
+        
+
+      </view>
+    </view>
+ </view>
+ </view>
+</scroll-view>
+  </van-tab>
+
+
+  </van-tabs>
